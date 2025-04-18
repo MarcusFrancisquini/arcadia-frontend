@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+//? Base
+@import "./sass/base/fonts";
+@import "./sass/base/colors";
+
+//? Components
+@import "./sass/components/navbar";
+
+body {
+  font-family: "Rubik", sans-serif;
+  background: $body-background;
+}

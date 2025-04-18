@@ -1,0 +1,17 @@
+.navbar {
+  padding: 20px;
+}
+
+.navbar-logo {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  color: $primary-white;
+  font-size: 2rem;
+  font-weight: 500;
+
+  &:hover {
+    color: $secondary-white;
+    transition: all 0.5s ease;
+  }
+}

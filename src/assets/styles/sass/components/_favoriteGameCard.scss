@@ -1,0 +1,61 @@
+.favorite-game-card {
+  width: 200px;
+  height: 280px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  position: relative;
+  transition: 0.3s;
+  transform-origin: center top;
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+
+  img {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    z-index: 10;
+    width: 200%;
+    height: 100%;
+    opacity: 0.1;
+    background: linear-gradient(
+      to top,
+      transparent,
+      #fff 15%,
+      rgba(255, 255, 255, 0.5)
+    );
+    position: absolute;
+    top: -90%;
+    left: -20px;
+    transform: rotate(45deg);
+    transition: 0.3s;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    transform: translateY(100%);
+    transition: 0.3s;
+  }
+
+  &:hover {
+    box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.6);
+    transform: translateY(-3px) scale(1.05) rotateX(15deg);
+    &::after {
+      top: -50%;
+      transform: rotate(25deg);
+      opacity: 0.15;
+    }
+    figcaption {
+      transform: none;
+    }
+  }
+}

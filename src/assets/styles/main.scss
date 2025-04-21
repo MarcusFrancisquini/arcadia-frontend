@@ -11,9 +11,11 @@
 //? Components
 @import "./sass/components/navbar";
 @import "./sass/components/gameCard";
+@import "./sass/components/favoriteGameCard";
 
 //? Pages
 @import "./sass/pages/home";
+@import "./sass/pages/favorites";
 
 body {
   font-family: "Rubik", sans-serif;

@@ -1,0 +1,43 @@
+.favorite-page-container {
+  padding: 20px;
+
+  h2 {
+    color: #ccc;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+
+    .title-text {
+      width: fit-content;
+      background: $background-primary;
+      padding: 0 1rem;
+    }
+
+    span {
+      font-size: 18px;
+      color: #aaa;
+      margin-left: 10px;
+    }
+
+    &::after {
+      content: "";
+      height: 2px;
+      background: #373d47;
+      position: absolute;
+      bottom: 50%;
+      margin-bottom: -2px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+}
+
+.favorite-games-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}

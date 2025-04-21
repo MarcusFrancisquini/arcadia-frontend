@@ -1,7 +1,14 @@
-import { FaBookmark, FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
+import {
+  FaRegBookmark,
+  FaBookmark,
+  FaWindows,
+  FaPlaystation,
+  FaXbox,
+} from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Game } from "../services/api";
+import { Game, toggleFavorite } from "../services/api";
 import { JSX } from "react";
 
 interface GameCardProps {
@@ -9,6 +16,18 @@ interface GameCardProps {
 }
 
 const GameCard = ({ game }: GameCardProps) => {
+  // Favorite games
+  const [isFavorite, setIsFavorite] = useState(game.isFavorite);
+
+  const handleFavoriteClick = async () => {
+    try {
+      await toggleFavorite(game._id!, isFavorite);
+      setIsFavorite(!isFavorite);
+    } catch (error) {
+      console.error("Erro ao favoritar:", error);
+    }
+  };
+
   // Normalize platform names
   const platformType = (platform: string) => {
     if (platform.toLowerCase().includes("playstation")) return "PlayStation";
@@ -45,7 +64,13 @@ const GameCard = ({ game }: GameCardProps) => {
           <div className={`game-rating ${getRating(game.rating)}`}>
             {game.rating.toFixed(1)}
           </div>
-          <FaBookmark size={18} />
+          <button onClick={handleFavoriteClick} className="favorite-button">
+            {isFavorite ? (
+              <FaBookmark size={18} />
+            ) : (
+              <FaRegBookmark size={18} />
+            )}
+          </button>
         </div>
         <div className="card-data">
           <div className="game-platforms">
@@ -66,5 +91,3 @@ const GameCard = ({ game }: GameCardProps) => {
 };
 
 export default GameCard;
-
-//TODO <FaRegBookmark size={18} /> usar esse icone para jogos não favoritados

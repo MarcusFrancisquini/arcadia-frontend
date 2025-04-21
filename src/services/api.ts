@@ -22,3 +22,14 @@ export async function getGames(): Promise<Game[]> {
   const response = await axios.get<Game[]>(API_URL);
   return response.data;
 }
+
+//? Update favorite games - PATCH
+export async function toggleFavorite(
+  gameId: string,
+  isCurrentlyFavorite: boolean
+): Promise<Game> {
+  const response = await axios.patch<Game>(`${API_URL}/${gameId}`, {
+    isFavorite: !isCurrentlyFavorite,
+  });
+  return response.data;
+}

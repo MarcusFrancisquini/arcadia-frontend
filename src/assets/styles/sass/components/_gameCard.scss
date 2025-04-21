@@ -109,3 +109,10 @@
   z-index: 1;
   border-radius: 8px;
 }
+
+.favorite-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: $white;
+}

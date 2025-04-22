@@ -33,3 +33,9 @@ export async function toggleFavorite(
   });
   return response.data;
 }
+
+//? GET BY ID
+export async function getGameById(id: string): Promise<Game> {
+  const response = await axios.get<Game>(`${API_URL}/${id}`);
+  return response.data;
+}

@@ -7,7 +7,7 @@ interface GameCardProps {
 
 const FavoriteGameCard = ({ game }: GameCardProps) => {
   return (
-    <Link to="">
+    <Link to={`/games/${game._id}`}>
       <figure className="favorite-game-card">
         <img src={game.imageUrl} alt="game-cover" />
         <figcaption>{game.name}</figcaption>

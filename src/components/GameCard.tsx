@@ -80,7 +80,7 @@ const GameCard = ({ game }: GameCardProps) => {
           </div>
           <h1 className="game-name">{game.name}</h1>
           <p className="game-description">{game.description}</p>
-          <Link to="" className="read-more-button">
+          <Link to={`/games/${game._id}`} className="read-more-button">
             <span>Ver detalhes</span>
             <FaArrowRight size={15} className="read-more-button-icon" />
           </Link>

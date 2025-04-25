@@ -16,10 +16,11 @@
     linear-gradient(transparent, transparent, #0004);
 }
 
-.game-dt-left-container {
+.game-dt-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: center;
 }
 
 .game-dt-title {
@@ -49,7 +50,7 @@
   text-align: justify;
 }
 
-.game-dt-platform-container {
+.game-dt-information-container {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -68,4 +69,22 @@
 
 .game-dt-platforms {
   color: $white;
+}
+
+.game-dt-information-text {
+  font-size: 16px;
+  color: $white;
+}
+
+.game-dt-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.game-dt-information {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+  row-gap: 2rem;
 }

@@ -41,11 +41,17 @@
   }
 }
 
-.search-input-icon {
+.search-input-button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-35%);
   right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.search-input-icon {
   color: $text-muted;
 }
 

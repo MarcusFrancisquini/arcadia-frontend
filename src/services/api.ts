@@ -15,7 +15,7 @@ export interface Game {
   isFavorite: boolean;
 }
 
-const API_URL = "http://localhost:3000/games";
+const API_URL = import.meta.env.VITE_API_URL;
 
 //? Read - GET
 export async function getGames(): Promise<Game[]> {
